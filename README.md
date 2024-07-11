@@ -1,5 +1,5 @@
 
-# Azure Terraform Project
+# Azure Terraform Project - Creating a K3s Cluster
 
 This repository contains Terraform configuration files to set up an Azure infrastructure with the following components:
 
