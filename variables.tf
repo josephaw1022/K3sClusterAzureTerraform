@@ -37,19 +37,19 @@ variable "ansible_subnet_name" {
 variable "master_vm_name" {
   description = "The name of the master node VM"
   type        = string
-  default     = "master_node_1"
+  default     = "master-node"
 }
 
 variable "worker_vm_name" {
   description = "The name of the worker node VM"
   type        = string
-  default     = "worker_node_1"
+  default     = "worker-node"
 }
 
 variable "ansible_vm_name" {
   description = "The name of the ansible host VM"
   type        = string
-  default     = "ansible_host"
+  default     = "ansible-host"
 }
 
 variable "admin_username" {
@@ -61,13 +61,11 @@ variable "admin_username" {
 variable "admin_password" {
   description = "The admin password for the virtual machines"
   type        = string
-  default     = "Password123"
 }
 
 variable "allowed_ip" {
   description = "The allowed IP address for SSH and kube API access"
   type        = string
-  default     = " 71.68.132.28"
 }
 
 

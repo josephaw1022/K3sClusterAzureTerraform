@@ -11,12 +11,12 @@ resource "azurerm_network_interface" "worker_nic" {
 }
 
 resource "azurerm_virtual_machine" "worker_vm" {
-  count                  = var.worker_count
-  name                   = "${var.worker_vm_name}-${count.index + 1}"
-  location               = var.location
-  resource_group_name    = azurerm_resource_group.main.name
-  network_interface_ids  = [azurerm_network_interface.worker_nic[count.index].id]
-  vm_size                = "Standard_B1ms"
+  count                 = var.worker_count
+  name                  = "${var.worker_vm_name}-${count.index + 1}"
+  location              = var.location
+  resource_group_name   = azurerm_resource_group.main.name
+  network_interface_ids = [azurerm_network_interface.worker_nic[count.index].id]
+  vm_size               = "Standard_B1ms"
 
   storage_os_disk {
     name              = "${var.worker_vm_name}-${count.index + 1}-osdisk"
@@ -26,11 +26,12 @@ resource "azurerm_virtual_machine" "worker_vm" {
   }
 
   storage_image_reference {
-    publisher = "SUSE"
-    offer     = "openSUSE-Leap"
-    sku       = "15.5"
+    publisher = "suse"
+    offer     = "opensuse-leap-15-5"
+    sku       = "gen1"
     version   = "latest"
   }
+
 
   os_profile {
     computer_name  = "${var.worker_vm_name}-${count.index + 1}"

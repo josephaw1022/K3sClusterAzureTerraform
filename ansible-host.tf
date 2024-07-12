@@ -23,12 +23,13 @@ resource "azurerm_virtual_machine" "ansible_vm" {
     managed_disk_type = "Standard_LRS"
   }
 
-  storage_image_reference {
-    publisher = "SUSE"
-    offer     = "openSUSE-Leap"
-    sku       = "15.5"
-    version   = "latest"
-  }
+storage_image_reference {
+  publisher = "suse"
+  offer     = "opensuse-leap-15-5"
+  sku       = "gen1"
+  version   = "latest"
+}
+
 
   os_profile {
     computer_name  = var.ansible_vm_name
