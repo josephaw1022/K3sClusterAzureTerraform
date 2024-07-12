@@ -14,7 +14,7 @@ resource "azurerm_virtual_machine" "ansible_vm" {
   location              = var.location
   resource_group_name   = azurerm_resource_group.main.name
   network_interface_ids = [azurerm_network_interface.ansible_nic.id]
-  vm_size               = "Standard_DS1_v2"
+  vm_size               = "Standard_B1ms"
 
   storage_os_disk {
     name              = "${var.ansible_vm_name}-osdisk"

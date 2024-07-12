@@ -61,11 +61,13 @@ variable "admin_username" {
 variable "admin_password" {
   description = "The admin password for the virtual machines"
   type        = string
+  default     = "Password123"
 }
 
 variable "allowed_ip" {
   description = "The allowed IP address for SSH and kube API access"
   type        = string
+  default     = " 71.68.132.28"
 }
 
 
